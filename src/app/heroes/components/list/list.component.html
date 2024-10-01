@@ -1,0 +1,30 @@
+<!-- Rai Fenoll. Clase de ngfor y if else -->
+
+<h1>--Componente Lista Heroes (NGFOR, ngiflese)--</h1>
+<hr>
+
+<!-- ANGULAR FOR -->
+<ul class="mt-2 list-group">
+  <li
+    *ngFor="let item of heoreNames"
+    class="list-group-item">{{item}}
+  </li>
+</ul>
+
+<hr>
+
+<!-- NG IF ELSE -->
+<button
+  *ngIf="heoreNames.length > 0"
+  (click)="removeLastHeroe()"
+  class="btn btn-outline-danger">
+  Borrar Ultimo heroe
+</button>
+
+<div *ngIf="deteletLastHeroe else nothingwWasDeleted">
+  <h3>Héroe Borrado: <small class="text-danger"> {{deteletLastHeroe}} </small></h3>
+</div>
+
+<ng-template #nothingwWasDeleted>
+  <h3>No ha borrado nada</h3>
+</ng-template>
